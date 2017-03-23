@@ -18,7 +18,10 @@ class DangKiSVController extends Controller
         }
         }
         if($count == 1){
-            return redirect()->route('getSinhVienDacBiet');
+            $data= $request->txtTenSV;
+            return $data;
+            // return view('listSVDacBiet', compact('sinhvien'));
+
         }
         else{
         	return redirect()->back();

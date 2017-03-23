@@ -97,7 +97,7 @@
         </div> -->
         <!-- /.row -->
         
-        
+        @foreach($sinhvien as $retrieve)
         <div class="row"  >
             <!-- <div class="col-md-3">
                 <a href="#">
@@ -107,7 +107,7 @@
             <div class="col-md-12" style="line-height:32px;vertical-align:middle; width:100%">
                 <ul style="list-style:none">
 
-                <li style="display:inline; font-size: large">- {!!$data!!}</li>
+                <li style="display:inline; font-size: large">- {!!$retrieve!!}</li>
                 <li style="display:inline">
                 <!-- <?php
 
@@ -139,7 +139,7 @@
 
 
         </div>
-        
+        @endforeach
     </table>
     <hr>
 

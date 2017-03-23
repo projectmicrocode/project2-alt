@@ -24,7 +24,7 @@ class AddDeTaiRequest extends FormRequest
     public function rules()
     {
         return [
-            'txtName'=>'required|unique:detai,tendetai',
+            'txtName'=>'required',
             'numSV'=>'required',
             'txtKiNang'=>'required',
             'txtDinhHuong'=>'required',
@@ -35,7 +35,7 @@ class AddDeTaiRequest extends FormRequest
     {
         return [
             'txtName.required' => 'Vui lòng nhập tên đề tài',
-            'txtName.unique'  => 'Đề tài đã tồn tại',
+            // 'txtName.unique'  => 'Đề tài đã tồn tại',
             'numSV.required'=>'Vui lòng nhập số lượng sinh viên nhận',
             'txtKiNang.required'=>'Vui lòng nhập yêu cầu ngôn ngữ',
             'txtDinhHuong.required'=>'Vui lòng nhập định hướng',
