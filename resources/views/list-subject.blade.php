@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
+    <title>Giảng Viên Phụ Trách</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,12 +17,11 @@
     <!-- Custom CSS -->
     <link href="css/1-col-portfolio.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
 
 </head>
 
@@ -39,19 +38,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Project Microcode</a>
+                <a class="navbar-brand" href="{!! url('listDeTai')!!}">Giảng Viên Phụ Trách</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="{!! url('listDeTai')!!}">Danh Sách Đề Tài</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">Danh Sách Sinh Viên</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Danh Sách Đặc Biệt</a>
                     </li>
                 </ul>
             </div>
@@ -67,48 +66,43 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Danh sách đề tài
-                    <small>Đề tài nổi bật</small>
+                    
                 </h1>
             </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Project One -->
-        <!-- <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Subject1234</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div> -->
-        <!-- /.row -->
+       
 
         @foreach ($data as $retrieve)
+        @if($retrieve->tinhtrang == 0)
         <div class="row">
-            <!-- <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="https://pbs.twimg.com/profile_images/502111486915788801/DtB5ruDz_400x400.jpeg" alt="">
-                </a>
-            </div> -->
+            
             <div class="col-md-5">
                 <h3>{{{$retrieve->tendetai}}}</h3>
                 <h4>Số chỉ tiêu: {{{$retrieve->sosinhviennhan}}}</h4>
                 <p>Nội dung: {{{$retrieve->noidungcv}}}</p>
-                <a class="btn btn-primary" href="#">Duyệt <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <form action="duyetDeTai/<?php echo $retrieve->id_detai?>" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button class="btn btn-primary" href="#" id="btnDuyet">Duyệt</button></form>
             </div>
         </div>
+        @endif
         @endforeach
+
+        
+        <script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnChiTietDeTai").click(function () {
+            $('#myModal').modal('show')
+        });
+    });
+    </script>
 
         <hr>
 
        
         <hr>
+
 
         <!-- Pagination -->
         <div class="row text-center">

@@ -97,7 +97,7 @@
         </div> -->
         <!-- /.row -->
         
-        @foreach ($data as $retrieve)
+        
         <div class="row"  >
             <!-- <div class="col-md-3">
                 <a href="#">
@@ -107,9 +107,9 @@
             <div class="col-md-12" style="line-height:32px;vertical-align:middle; width:100%">
                 <ul style="list-style:none">
 
-                <li style="display:inline; font-size: large">- {{{$retrieve->tendetai}}}</li>
+                <li style="display:inline; font-size: large">- {!!$data!!}</li>
                 <li style="display:inline">
-                <?php
+                <!-- <?php
 
                 if ($retrieve->tinhtrang==0) {
                     echo "<Span 
@@ -117,28 +117,29 @@
                     // background: #2eb82e;
                     // vertical-align:middle;
                     // box-shadow:none;
-                    color: red;'
+                    color: green;'
                     // font-style: bold;
                     // border-radius: 0px;'
-                    class='glyphicon glyphicon-remove-circle'></Span>";
+                    class='glyphicon glyphicon-ok-circle'></Span>";
                 } else {
                     echo "<Span 
                     style=' 
                     // background: #ff5050;
                     // box-shadow:none;
-                    color: green;'
+                    color: red;'
                     // border-radius: 0px;' 
-                    class='glyphicon glyphicon-ok-circle'></Span>";
+                    class='glyphicon glyphicon-remove-circle'></Span>";
                 }
 
-                ?></li>
+                ?> -->
+                </li>
 
                 </ul>
             </div>
 
 
         </div>
-        @endforeach
+        
     </table>
     <hr>
 

@@ -43,7 +43,7 @@ class LoginController extends Controller
  		$passSV = $val1['mssv'];
  		if(($usernameSV == $request->txtUsername) && ( $passSV == $request->txtPass)){
  			$count++;
- 			 return redirect()->route('listDeTai');
+ 			 return redirect()->route('listDeTaiSV');
 
  		}
 
@@ -58,7 +58,7 @@ class LoginController extends Controller
  			if($val1['chucvu'] =="Giảng viên hướng dẫn"){
  			  	return redirect()->route('giangVienHuongDan');
  			}else{
- 				return redirect()->route('giangVienPhuTrach');
+ 				return redirect()->route('listDeTai');
  			}
 
 

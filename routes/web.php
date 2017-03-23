@@ -19,6 +19,11 @@ Route::get('listDeTai',['as'=>'listDeTai','uses'=>'DeTaiController@getListDeTai'
 //công ty
 Route::get('addCompany',['as'=>'getCompany','uses'=>'CompanyController@getCongTy']);
 Route::post('addCompany',['as'=>'postCompany','uses'=>'CompanyController@postCongTy']);
+Route::get('dangKiSV',['as'=>'dangKiSV',function(){
+	return view('dangKiSinhVien');
+	}]);
+Route::post('dangKiSV',['as'=>'postDangKiSV','uses'=>'DangKiSVController@postDangKiSV']);
+
 //login
 Route::get('/',['as'=>'getLogin','uses'=>'LoginController@getLogin']);
 Route::post('login',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
@@ -43,7 +48,16 @@ Route::get('deleteGV/{id}',['as'=>'getDeleteGV','uses'=>'GiangVienController@get
 Route::get('giangVienPhuTrach',['as'=>'giangVienPhuTrach',function(){
 	return "đây là trang của giang vien phụ trách";
 }]);
+Route::get('listSVDacBiet',['as'=>'listSVDacBiet',function(){
+	return view('listSVDacBiet');
+}]);
+Route::post('duyetDeTai/{id}',['as'=>'duyetDeTai','uses'=>'DeTaiController@postDuyetDeTai']);
+
+
 //giang vien hướng dẫn
 Route::get('giangVienHuongDan',['as'=>'giangVienHuongDan',function(){
 	return "đây là trang của giang vien hướng dẫn";
 }]);
+//Sinh Viên
+Route::get('listDeTaiSV',['as'=>'listDeTaiSV','uses'=>'DeTaiController@getListDeTaiSV']);
+

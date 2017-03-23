@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\SinhVien;
 use App\Http\Requests;
 use DateTime;
+
 class SinhVienController extends Controller
 {
     public function getListSV(){
@@ -39,6 +40,8 @@ class SinhVienController extends Controller
     public function getDelete($id){
         $sinhvien = SinhVien::findOrFail($id);
         $sinhvien->delete();
+        
         return "Xóa Thành Công";
     }
+   
 }
