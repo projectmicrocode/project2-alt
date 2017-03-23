@@ -31,8 +31,8 @@ class DeTaiController extends Controller
         return redirect()->route('listDeTai');
     }
     public function getListDeTai(){
-         $data = DeTai::select('tendetai')->get()->toArray();
-        
-    	return view('listDeTai',['dataDeTai'=>$data]);
+         $data = DeTai::getDetai();
+        $view = array('tendetai' => $data);
+    	return view('list-subject',compact('data'));
     }
 }
