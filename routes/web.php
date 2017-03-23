@@ -60,4 +60,6 @@ Route::get('giangVienHuongDan',['as'=>'giangVienHuongDan',function(){
 }]);
 //Sinh Viên
 Route::get('listDeTaiSV',['as'=>'listDeTaiSV','uses'=>'DeTaiController@getListDeTaiSV']);
-
+Route::get('decuong', function() {
+	return view('Instructor');
+});

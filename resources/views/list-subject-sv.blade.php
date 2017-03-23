@@ -53,7 +53,7 @@
                             <a href="#">Đăng Kí Nguyện Vọng</a>
                         </li>
                         <li>
-                            <a href="http://localhost/project2/public/listDeTaiSV">Danh Sách Đề Tài</a>
+                            <a href="/listDeTaiSV">Danh Sách Đề Tài</a>
                         </li>
                         <li>
                             <a href="#">Nộp Báo Cáo</a>
