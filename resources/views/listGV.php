@@ -81,8 +81,9 @@
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="email" name="txtEmail" placeholder="Vui lòng nhập Email" ng-model="giangvien.txtEmail" ng-required="true" />
+							<input type="email" class="form-control" id="email" name="txtEmail" placeholder="Vui lòng nhập Email" ng-model="giangvien.txtEmail" ng-required="true" />
 							<span id="helpBlock2" class="help-block" ng-show="frmSinhVien.txtEmail.$error.required">Vui lòng nhập Email</span>
+							<span id="helpBlock2" class="help-block" ng-show="frmSinhVien.txtEmail.$error.email">Đây không phải là Email</span>
 							
 
 

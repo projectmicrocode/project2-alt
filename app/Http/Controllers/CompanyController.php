@@ -14,9 +14,9 @@ class CompanyController extends Controller
     }
     public function postCongTy(CompanyRequest $request){
     	$company = new Company;
-    	$company->username = $request->txtUsername;
-    	$company->password = $request->txtPass;
-    	$company->name = $request->txtName;
+    	$company->username = $request->username;
+    	$company->password = $request->password;
+    	$company->name = $request->company;
     	$company->address = $request->txtAddress;
     	$company->email = $request->txtEmail;
     	$company->phone = $request->txtPhone;

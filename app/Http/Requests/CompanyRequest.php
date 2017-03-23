@@ -24,9 +24,9 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'txtUsername' => 'required|unique:company,username',
-            'txtPass'=>'required',
-            'txtName'=>'required',
+            'username' => 'required|unique:company,username',
+            'password'=>'required',
+            'company'=>'required',
             'txtAddress'=>'required',
             'txtEmail'=>'required',
             'txtPhone'=>'required'
@@ -35,10 +35,10 @@ class CompanyRequest extends FormRequest
     public function messages()
     {
         return [
-            'txtUsername.required' => 'Vui lòng nhập tên Đăng Nhập',
-            'txtUsername.unique'  => 'Tên đăng nhập đã tồn tại',
-            'txtPass.required'=>'Vui lòng nhập password',
-            'txtName.required'=>'Vui lòng nhập tên công ty',
+            'username.required' => 'Vui lòng nhập tên Đăng Nhập',
+            'username.unique'  => 'Tên đăng nhập đã tồn tại',
+            'password.required'=>'Vui lòng nhập password',
+            'company.required'=>'Vui lòng nhập tên công ty',
             'txtAddress.required'=>'Vui lòng nhập địa chỉ',
             'txtEmail.required'=>'Vui lòng nhập Email',
             'txtPhone.required'=>'Vui lòng nhập số điện thoại'

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Quy trình thực tập doanh nghiệp</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="//code.jquery.com/jquery.js"></script>
@@ -67,7 +67,12 @@
                             </fieldset>
                         </form>
                         <br>
-                        <button class="btn" name="btnDangKi"><a href="http://localhost/project2/public/addCompany">Đăng Kí</a></button>
+                        <button class="btn" name="btnDangKi" id="btnDK">
+                            <!-- <a href="http://localhost/project2/public/addCompany"> -->
+                            Đăng Kí
+                            <!-- </a> -->
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -78,43 +83,59 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Công Ty Đăng Kí</h4>
               </div>
               <div class="modal-body">
-                <form name="frmSinhVien" class="form-horizontal">
+              <!-- @include('error') -->
+                <form name="frmSinhVien" class="form-horizontal" action = "addCompany" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Họ tên</label>
+                        <label for="inputEmail3" class="col-sm-3 control-label">Tên Đăng Nhập</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Vui lòng nhập họ tên" />
-                            <span id="helpBlock2" class="help-block">Vui lòng nhập họ tên</span>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Vui lòng nhập tên đăng nhập" />
+                            
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Tuổi</label>
+                        <label for="inputEmail3" class="col-sm-3 control-label">Password</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="age" name="age" placeholder="Vui lòng nhập tuổi" >
-                            <span id="helpBlock2" class="help-block">Vui lòng nhập tuổi</span>
+                            <input type="password" class="form-control" id="pass" name="password" placeholder="Vui lòng nhập password" >
+                            
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                        <label for="inputEmail3" class="col-sm-3 control-label">Tên Công Ty</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Vui lòng nhập Email" />
-                            <span id="helpBlock2" class="help-block">Vui lòng nhập email</span>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Vui lòng nhập tên công ty" />
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Địa chỉ</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="address" name="txtAddress" placeholder="Vui lòng nhập địa chỉ" />
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="email" name="txtEmail" placeholder="Vui lòng nhập tên Email" />
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-3 control-label">Điện thoại</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Vui lòng nhập số điện thoại" />
-                            <span id="helpBlock2" class="help-block">Vui lòng nhập điện thoại</span>
+                            <input type="text" class="form-control" id="phone" name="txtPhone" placeholder="Vui lòng nhập số điện thoại" />
+                            
                         </div>
                     </div>
-                    
+                    <input type="submit" name="submit" class="btn btn-default btn-primary btn-block" value="Đăng kí">
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Lưu</button>
+               
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
