@@ -53,10 +53,7 @@
                             <a href="#">Đăng Kí Nguyện Vọng</a>
                         </li>
                         <li>
-
                             <a href="{!!url('listDeTaiSV')!!}">Danh Sách Đề Tài</a>
-                            
-
                         </li>
                         <li>
                             <a href="{!!url('nopBaoCao')!!}">Nộp Báo Cáo</a>
@@ -77,106 +74,39 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Danh sách đề tài
-                        
+                    <h1 class="page-header">Nộp Báo Cáo
                     </h1>
                 </div>
             </div>
-            <!-- /.row -->
+            
+        	<div class="form-group">
+        		<form action="nopBaoCao" method="POST">
+        			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+    				<label for="exampleInputFile">Chọn File</label>
+    				<input type="file"  id="exampleInputFile" name="chonFile" value="chonFile">
+  				<br>
+  				<label for="inputEmail3" class="col-sm-3 control-label">Hình Thức</label>
+  				<
+  				<span class="form_item">
 
-            <!-- Project One -->
-        <!-- <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Subject1234</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div> -->
-        <!-- /.row -->
-        
-        @foreach ($data as $retrieve)
-        <div class="row"  >
-            <!-- <div class="col-md-3">
-                <a href="#">
-                    <img class="img-responsive" src="https://pbs.twimg.com/profile_images/502111486915788801/DtB5ruDz_400x400.jpeg" alt="">
-                </a>
-            </div> -->
-            <div class="col-md-12" style="line-height:32px;vertical-align:middle; width:100%">
-                <ul style="list-style:none">
-
-                <li style="display:inline; font-size: large">- {{{$retrieve->tendetai}}}</li>
-                <li style="display:inline">
-                <?php
-
-                if ($retrieve->tinhtrang==0) {
-                    echo "<Span 
-                    style=' 
-                    // background: #2eb82e;
-                    // vertical-align:middle;
-                    // box-shadow:none;
-                    color: red;'
-                    // font-style: bold;
-                    // border-radius: 0px;'
-                    class='glyphicon glyphicon-remove-circle'></Span>";
-                } else {
-                    echo "<Span 
-                    style=' 
-                    // background: #ff5050;
-                    // box-shadow:none;
-                    color: green;'
-                    // border-radius: 0px;' 
-                    class='glyphicon glyphicon-ok-circle'></Span>";
-                }
-
-                ?></li>
-
-                </ul>
-            </div>
-
-
-        </div>
-        @endforeach
-    <hr>
-
-
-    <hr>
+								<select name="sltCate" class="form-control" ng-model="sinhvien.sltCate" ng-required="true">
+									<option value="0">--- Hình Thức ---</option>
+									<option value="Cuối Kì">Cuối Kì</option>
+									<option value="Giữa Kì">Giữa Kì</option>
+									
+									
+								</select>
+							</span>
+							<br>
+  				<input class="btn btn-primary"  type="submit" name="submit" value="Gửi">
+  				</form>
+        	</div>
+   
 
     <!-- Pagination -->
-    <div class="row text-center">
-        <div class="col-lg-12">
-            <ul class="pagination">
-                <li>
-                    <a href="#">&laquo;</a>
-                </li>
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>
-                    <a href="#">&raquo;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
     <!-- /.row -->
-
+	<hr>
     <hr>
 
     <!-- Footer -->

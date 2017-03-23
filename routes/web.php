@@ -60,4 +60,11 @@ Route::get('giangVienHuongDan',['as'=>'giangVienHuongDan',function(){
 }]);
 //Sinh Viên
 Route::get('listDeTaiSV',['as'=>'listDeTaiSV','uses'=>'DeTaiController@getListDeTaiSV']);
-
+<<<<<<< HEAD
+Route::get('nopBaoCao',['as'=>'getNopBaoCao','uses'=>'nopBaoCaoController@getNopBaoCao']);
+Route::post('nopBaoCao',['as'=>'postNopBaoCao','uses'=>'nopBaoCaoController@postNopBaoCao']);
+=======
+Route::get('decuong', function() {
+	return view('Instructor');
+});
+>>>>>>> 63a00844b6180f180e82e4800956dca930ff5c82
