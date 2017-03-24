@@ -70,7 +70,7 @@
 
         <!-- Page Content -->
         <div class="container">
-
+			@include('error')
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
@@ -80,16 +80,16 @@
             </div>
             
         	<div class="form-group">
-        		<form action="nopBaoCao" method="POST">
+        		<form action="nopBaoCao" method="POST" enctype="multipart/form-data">
         			<input type="hidden" name="_token" value="{{ csrf_token() }}">
     				<label for="exampleInputFile">Chọn File</label>
-    				<input type="file"  id="exampleInputFile" name="chonFile" value="chonFile">
+    				<input type="file"  id="chonFile" name="chonFile" value="chonFile">
   				<br>
   				<label for="inputEmail3" class="col-sm-3 control-label">Hình Thức</label>
   				<
   				<span class="form_item">
 
-								<select name="sltCate" class="form-control" ng-model="sinhvien.sltCate" ng-required="true">
+								<select name="sltCate" class="form-control" >
 									<option value="0">--- Hình Thức ---</option>
 									<option value="Cuối Kì">Cuối Kì</option>
 									<option value="Giữa Kì">Giữa Kì</option>

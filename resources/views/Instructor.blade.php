@@ -39,13 +39,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{!! url('listDeTai')!!}">Ngưòi Hướng Dẫn</a>
+                    <a class="navbar-brand" href="{!! url('nopDeCuong')!!}">Người Hướng Dẫn Doanh Nghiệp</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#">Nộp Đề Cương Chi Tiết</a>
+                            <a href="{!! url('nopDeCuong')!!}">Nộp Đề Cương Chi Tiết</a>
                         </li>
                         <li>
                             <a href="#">Chấm Công</a>
@@ -61,18 +61,36 @@
         </nav>
 
         <!-- Page Content -->
+        
         <div class="container">
-
-
-
-           <div class="fileinput fileinput-new" data-provides="fileinput">
-           <span class="btn btn-default btn-file" ><span >Choose file</span><input type="hidden"><input type="file"></span>
-            <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
-        </div>
-
+            @include('error')
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Nộp Báo Cáo
+                    </h1>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <form action="nopDeCuong" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label for="exampleInputFile">Chọn File</label>
+                    <input type="file"  id="chonFile" name="chonFile" value="chonFile">
+                <br>
+                
+                            <br>
+                <input class="btn btn-primary"  type="submit" name="submit" value="Gửi">
+                </form>
+            </div>
 
         
-
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -83,7 +101,7 @@
             <!-- /.row -->
         </footer>
 
-    </div>
+    
     <!-- /.container -->
 
     <!-- jQuery -->

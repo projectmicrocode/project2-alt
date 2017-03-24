@@ -52,19 +52,24 @@ Route::get('listSVDacBiet',['as'=>'listSVDacBiet',function(){
 	return view('listSVDacBiet');
 }]);
 Route::post('duyetDeTai/{id}',['as'=>'duyetDeTai','uses'=>'DeTaiController@postDuyetDeTai']);
+Route::get('downDeCuong',['as'=>'downDeCuong','uses'=>'NopDeCuongController@downDeCuong']);
 
 
 //giang vien hướng dẫn
 Route::get('giangVienHuongDan',['as'=>'giangVienHuongDan',function(){
 	return "đây là trang của giang vien hướng dẫn";
 }]);
+Route::get('downBaoCao',['as'=>'downBaoCao','uses'=>'nopBaoCaoController@downBaoCao']);
 //Sinh Viên
 Route::get('listDeTaiSV',['as'=>'listDeTaiSV','uses'=>'DeTaiController@getListDeTaiSV']);
 
 Route::get('nopBaoCao',['as'=>'getNopBaoCao','uses'=>'nopBaoCaoController@getNopBaoCao']);
 Route::post('nopBaoCao',['as'=>'postNopBaoCao','uses'=>'nopBaoCaoController@postNopBaoCao']);
+Route::get('showBaoCao',['as'=>'showBaoCao','uses'=>'nopBaoCaoController@showBaoCao']);
 
-Route::get('decuong', function() {
-	return view('Instructor');
-});
+// Hướng dẫn doanh nghiệp
+Route::get('nopDeCuong',['as'=>'getNopDeCuong','uses'=>'NopDeCuongController@getNopDeCuong']);
+Route::post('nopDeCuong',['as'=>'postNopDeCuong','uses'=>'NopDeCuongController@postNopDeCuong']);
+Route::get('showDeCuong',['as'=>'showDeCuong','uses'=>'NopDeCuongController@showDeCuong']);
+
 
