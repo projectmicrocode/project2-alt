@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content=""> 
     <meta name="author" content="">
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
+    <title>Danh Sách Sinh Viên Đặc Biệt Chờ Duyệt</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,25 +44,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost/project2/public/listDeTaiSV">Sinh Viên</a>
+                    <a class="navbar-brand" href="{!! url('listDeTai')!!}">Giảng Viên Phụ Trách</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">Đăng Kí Nguyện Vọng</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost/project2/public/listDeTaiSV">Danh Sách Đề Tài</a>
-                        </li>
-                        <li>
-                            <a href="#">Nộp Báo Cáo</a>
-                        </li>
-                        <li>
-                            <a href="#">Xem Điểm Thực Tập</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{!! url('listDeTai')!!}">Danh Sách Đề Tài</a>
+                    </li>
+                    <li>
+                        <a href="#">Danh Sách Sinh Viên</a>
+                    </li>
+                    <li>
+                        <a href="{!!url('listSVDacBiet')!!}">Danh Sách Đặc Biệt</a>
+                    </li>
+                </ul>
+            </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
@@ -74,7 +71,7 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Danh sách đề tài
+                    <h1 class="page-header">Danh sách sinh viên đặc biệt
                         
                     </h1>
                 </div>
@@ -97,7 +94,7 @@
         </div> -->
         <!-- /.row -->
         
-        @foreach($sinhvien as $retrieve)
+        @foreach($data as $val)
         <div class="row"  >
             <!-- <div class="col-md-3">
                 <a href="#">
@@ -107,31 +104,9 @@
             <div class="col-md-12" style="line-height:32px;vertical-align:middle; width:100%">
                 <ul style="list-style:none">
 
-                <li style="display:inline; font-size: large">- {!!$retrieve!!}</li>
+                <li style="display:inline; font-size: large">- {!!$val['ten']!!}</li>
                 <li style="display:inline">
-                <!-- <?php
-
-                if ($retrieve->tinhtrang==0) {
-                    echo "<Span 
-                    style=' 
-                    // background: #2eb82e;
-                    // vertical-align:middle;
-                    // box-shadow:none;
-                    color: green;'
-                    // font-style: bold;
-                    // border-radius: 0px;'
-                    class='glyphicon glyphicon-ok-circle'></Span>";
-                } else {
-                    echo "<Span 
-                    style=' 
-                    // background: #ff5050;
-                    // box-shadow:none;
-                    color: red;'
-                    // border-radius: 0px;' 
-                    class='glyphicon glyphicon-remove-circle'></Span>";
-                }
-
-                ?> -->
+                
                 </li>
 
                 </ul>

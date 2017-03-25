@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Giảng Viên Phụ Trách</title>
+    <title>Dach Sách Đề Tài Chờ Duyệt</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                         <a href="#">Danh Sách Sinh Viên</a>
                     </li>
                     <li>
-                        <a href="#">Danh Sách Đặc Biệt</a>
+                        <a href="{!!url('listSVDacBiet')!!}">Danh Sách Đặc Biệt</a>
                     </li>
                 </ul>
             </div>

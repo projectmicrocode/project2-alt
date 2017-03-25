@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Công Ty Đăng Kí Đề Tài</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link type="text/css" rel="stylesheet" href="template/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="template/css/style.css" />

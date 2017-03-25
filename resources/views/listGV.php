@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="copyright" content="QuocTuan.Info" />
 	<meta name="author" content="Vũ Quốc Tuấn" />
-	<title>Laravel 5.2 & Angular JS</title>
+	<title>Quản lý Giảng Viên</title>
 	<!-- Load Bootstrap CSS -->
 	<link type="text/css" rel="stylesheet" href="template/css/bootstrap.min.css" />
 	<link type="text/css" rel="stylesheet" href="template/css/style.css" />

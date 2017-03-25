@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="copyright" content="QuocTuan.Info" />
 	<meta name="author" content="Vũ Quốc Tuấn" />
-	<title>Laravel 5.2 & Angular JS</title>
+	<title>Quản Lý Sinh Viên</title>
 	<!-- Load Bootstrap CSS -->
 	<link type="text/css" rel="stylesheet" href="template/css/bootstrap.min.css" />
 	<link type="text/css" rel="stylesheet" href="template/css/style.css" />
@@ -13,8 +13,8 @@
 <div>
 	<?php include("menuBar.blade.php");?>
 	<br>
-	<br>
-	<div class="container" ng-controller="SinhVienController" role="main">
+	<br>V
+	<div class="container" ng-controller="SinhienController" role="main">
 
 		<center><h2>Danh Sách Sinh Viên</h2></center>
 		<table class="table table-bordered">

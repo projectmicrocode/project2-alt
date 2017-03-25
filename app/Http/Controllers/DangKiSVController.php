@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\DangKiSinhVienRequest;
 use App\SinhVien;
-
+use App\SinhVienDacBiet;
+// use DateTime;
 class DangKiSVController extends Controller
 {
      public function postDangKiSV(DangKiSinhVienRequest $request){
@@ -18,14 +19,22 @@ class DangKiSVController extends Controller
         }
         }
         if($count == 1){
-            $data= $request->txtTenSV;
-            return $data;
-            // return view('listSVDacBiet', compact('sinhvien'));
+            // return redirect()->route('addSinhVienDacBiet');
+            $sinhvien = new SinhVienDacBiet;
+            $sinhvien->ten = $request->txtTenSV;
+            $sinhvien->mssv = $request->txtMssv;
+            // $sinhvien->created_at() = new DateTime;
+            $sinhvien->save();
+            return "Thêm Thành Công!";
 
         }
         else{
         	return redirect()->back();
         }
+    }
+    public function listSVDacBiet(){
+        $data = SinhVienDacBiet::select('ten')->get()->toArray();
+        return view('listSVDacBiet',['data'=>$data]);
     }
    
 }
